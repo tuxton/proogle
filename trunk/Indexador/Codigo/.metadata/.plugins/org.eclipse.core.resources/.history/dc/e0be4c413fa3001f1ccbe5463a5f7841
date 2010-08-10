@@ -1,0 +1,196 @@
+import java.util.HashMap;
+import java.util.HashSet;
+import java.lang.Math;
+
+public class HostPageRank {
+
+	//Atributos
+	public double c; //dampening factor
+	private int countDocuments; //||v||
+	private HashMap<String,HashSet<String> > hashBlocksPointTo; //I(p)
+	private HashMap<String,Double> hashPR; //PR(p)
+	private HashMap<String,HashSet<String>> hashCountPagesPointedBy; //sirve para ||o(B)||
+	private HashMap<String,Double> hashBlockPR; //GR(B)
+	public double precitionToBreak; //Sirve para determinar cuando dejamos de iterar para calcular el PR
+	
+	//Metodos
+	HostPageRank()
+	{
+		c = 0.85;
+		countDocuments = 0;
+		precitionToBreak = 0.01;
+		hashBlocksPointTo = new HashMap<String,HashSet<String> >();
+		hashPR = new HashMap<String,Double>();
+		hashCountPagesPointedBy = new HashMap<String,HashSet<String> >();
+		hashBlockPR = new HashMap<String,Double>();
+	}
+	
+	private void setIP(String nameSourcePage,Object[] arrayPageNamesRef)
+	{
+		String nameDestPage;
+		String hostSourcePage = HostService.getHost(nameSourcePage);
+		for (int i = 0 ; i < arrayPageNamesRef.length ; ++i)
+		{
+			nameDestPage = (String)arrayPageNamesRef[i];
+			if ( !(HostService.getHost(nameDestPage).equals(hostSourcePage)) )
+			{
+				if (hashBlocksPointTo.containsKey(nameDestPage))
+					hashBlocksPointTo.get(nameDestPage).add(hostSourcePage);
+				else
+				{
+					HashSet<String> hashHost = new HashSet<String>();
+					hashHost.add(hostSourcePage);
+					hashBlocksPointTo.put(nameDestPage, hashHost);
+				}
+			}
+		}
+	}
+	
+	private void setOB(String nameSourcePage,Object[] arrayPageNamesRef)
+	{
+		String hostSourcePage = HostService.getHost(nameSourcePage);
+		
+		if ( !(hashCountPagesPointedBy.containsKey(hostSourcePage)) )
+		{
+			HashSet<String> hashPages = new HashSet<String>();
+			hashCountPagesPointedBy.put(hostSourcePage, hashPages);
+		}
+		
+		String destPage;
+		for (int i = 0 ; i < arrayPageNamesRef.length ; ++i)
+		{
+			destPage = (String)arrayPageNamesRef[i];
+			if  ( !(HostService.getHost(destPage).equals(hostSourcePage)) )
+			{
+				if (hashCountPagesPointedBy.containsKey(hostSourcePage))
+					hashCountPagesPointedBy.get(hostSourcePage).add(destPage);
+			}
+		}
+	}
+	
+	private void setInitialBlockPR()
+	{
+		
+	}
+	private void reCalculateBlockPR()
+	{
+		Object[] arrayPages = hashPR.keySet().toArray();
+		String namePage;
+		String hostPage;
+		for (int i = 0 ; i < arrayPages.length ; ++i)
+		{
+			namePage = (String) arrayPages[i];
+			hostPage = HostService.getHost(namePage);
+			double prPage = hashPR.get(namePage).doubleValue();
+			if (hashBlockPR.containsKey(hostPage))
+			{
+				double oldVal = hashBlockPR.get(hostPage).doubleValue();
+				hashBlockPR.put(hostPage, new Double(oldVal + prPage));
+			}
+			else
+				hashBlockPR.put(hostPage, new Double(prPage)); //La primera vez se le asigna a cada pagina 1/||v||
+		}
+	}
+	
+	private void setInitialPR()
+	{
+		//Puntaje inicial para las paginas
+		Object[] arrayPages = hashPR.keySet().toArray();
+		String namePage;
+		for (int i = 0 ; i < arrayPages.length ; ++i)
+		{
+			namePage = (String) arrayPages[i];
+			if (hashBlocksPointTo.containsKey(namePage))
+			{
+				//Solo le damos un puntaje distinto de 0 a las paginas que tienen algun hiperarco entrante
+				hashPR.put(namePage, new Double(1.0/countDocuments));
+			}
+			
+		}
+		
+		//Puntaje inicial para los bloques
+		calculateBlockPR();
+	}
+	
+	public void processInfoPage(String nameSourcePage,Object[] arrayPageNamesRef)
+	{
+		//Set ||V||
+		countDocuments++;
+		
+		if (arrayPageNamesRef != null)
+		{
+			//Set I(p)
+			setIP(nameSourcePage,arrayPageNamesRef);
+		
+			//Set ||O(B)||
+			setOB(nameSourcePage,arrayPageNamesRef);
+		}
+		
+		hashPR.put(nameSourcePage, new Double(0.0));
+			
+	}
+
+	public void calculateHostPR()
+	{
+		setInitialPR();
+		
+		Object[] arrayPages = hashPR.keySet().toArray();
+		Object[] arrayBlocksPointToP;
+		double newPR;
+		double oldPR;
+		double GRB;
+		int OB;
+		double difPR;
+		String B;
+		String p;
+		
+		
+		//---
+		//System.out.println("hashBlocksPointTo: " + hashBlocksPointTo);
+		//---
+		
+		do
+		{
+			difPR = 0;
+			for (int i = 0 ; i < arrayPages.length ; ++i)
+			{
+				p = (String)arrayPages[i];
+				if (hashBlocksPointTo.containsKey(p))
+				{
+					arrayBlocksPointToP = hashBlocksPointTo.get(p).toArray();
+					newPR = 0;
+					for (int j = 0 ; j < arrayBlocksPointToP.length ; ++j)
+					{
+						B = (String) arrayBlocksPointToP[j];
+						GRB = hashBlockPR.get(B).doubleValue();
+						OB = hashCountPagesPointedBy.get(B).size();
+						newPR += (GRB/OB) + (c/countDocuments);
+						
+						//---
+						//System.out.println("B  GRB  OB  newPR" + B + "|" + GRB + "|" + OB + "|" + newPR );
+						//---
+					
+					}
+					oldPR = hashPR.get(p).doubleValue();
+					newPR = (1 - c) * newPR;
+					difPR += Math.pow(Math.abs(newPR - oldPR),2.0);
+					hashPR.put(p, new Double( newPR));
+				}
+			}
+			calculateBlockPR();
+		}
+		while (difPR > precitionToBreak);
+	}
+	
+	public void writeToBD()
+	{
+		Object[] arrayNamesPages = hashPR.keySet().toArray();
+		
+		for (int i = 0 ; i < arrayNamesPages.length ; ++i)
+		{
+			String namePage = (String) arrayNamesPages[i];
+			double PR = hashPR.get(namePage).doubleValue();
+			System.out.println(namePage + ":        " + PR);
+		}
+	}
+}

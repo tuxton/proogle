@@ -1,0 +1,54 @@
+
+public final class Indexator {
+
+	/**
+	 * @param args
+	 */
+	
+	//Atributos
+	private DirectoryReader dirReader;
+	private XMLParser xmlParser;
+	private String pathIndex;
+	private Indegre ind;
+	private 
+	
+	//Metodos
+	//Constructor
+	Indexator(String path)
+	{
+		dirReader = new DirectoryReader(path);
+		xmlParser = new XMLParser();
+		pathIndex = path;
+		ind = new Indegre();
+	}
+	
+	void startIndex()
+	{
+		String absFilePath;
+		do
+		{
+			absFilePath = pathIndex + "/" + dirReader.getProxNameDoc();
+			if (dirReader.readResult != TypeReadResult.END_OF_FILE)
+			{
+				System.out.println("Parseando: " + absFilePath);
+				xmlParser.parseHTML(absFilePath);
+				if (xmlParser.arrayOfOutLinks.size() > 0)
+				{
+					System.out.println("Links Encontrados: "+ xmlParser.arrayOfOutLinks.toString());
+					ind.processInfoPage(xmlParser.arrayOfOutLinks.toArray());
+				}
+				ind.writeToBD();
+			}
+		}
+		while (dirReader.readResult != TypeReadResult.END_OF_FILE);
+	}
+	
+	//Main
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hola 7519");
+		Indexator myIndex = new Indexator(args[0]);
+		myIndex.startIndex();
+	}
+
+}

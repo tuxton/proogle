@@ -1,0 +1,46 @@
+
+import java.util.HashMap;
+import java.util.HashSet;
+
+public class HostIndegre 
+{
+	//Atributos
+	private HashMap<String,HashSet<String> > ranking; //Va a guardar par <pagina,lista de bloques que hacen referencia a la misma>
+	
+	
+	//Metodos publicos
+	HostIndegre()
+	{
+		ranking = new HashMap<String,HashSet<String> >();
+	}
+	
+	public void processInfoPage(String namePage,Object[] arrayPageNamesRef)
+	{
+		//Recive una pagina y un array con las paginas a las cuales hace referencia
+		//Con esto arma el ranking
+		String hostSourcePage = HostService.getHost(namePage);
+		String hostDestPage;
+		for (int i = 0 ; i < arrayPageNamesRef.length ; ++i)
+		{
+			hostDestPage = HostService.getHost((String)arrayPageNamesRef[i]);
+			if (!(hostSourcePage.equals(hostSourcePage)) )
+			{
+				//Si el host fuente ya existe entre los que ya se encontraron para la pagina destino, no lo agrego
+				if ( ranking.containsKey(hostDestPage) )
+				{
+					HashSet<String> hashHostDestPage = ranking.get(hostDestPage);
+					if (!(hashHostDestPage.contains(hostSourcePage)))
+						hashHostDestPage.add(hostSourcePage);
+					 	
+				}
+				else
+				{
+					HashSet<String> hashHostDestPage = new HashSet<String>();
+					hashHostDestPage.add(hostSourcePage);
+					ranking.put(hostDestPage, hashHostDestPage );
+				}
+			}
+		}
+		
+	}
+}

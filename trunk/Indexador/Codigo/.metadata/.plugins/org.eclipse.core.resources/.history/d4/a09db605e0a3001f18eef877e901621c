@@ -1,0 +1,173 @@
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.HashMap;
+import java.util.ArrayList;
+
+public class DataBaseService {
+	
+	//Atributos
+	private Connection conexion;
+	
+	//Metodos
+	DataBaseService(String nameBD)
+	{
+		try
+		{
+		   Class.forName("com.mysql.jdbc.Driver");
+		   String paramOne = "jdbc:mysql://localhost/" + nameBD;
+		   conexion = DriverManager.getConnection (paramOne,"root", "maxi");
+		   
+		   Statement st = conexion.createStatement();
+		   st.executeUpdate("DROP TABLE IF EXISTS `articulos`"); 
+		}
+		catch (SQLException s)
+		{
+		   s.printStackTrace();
+		}
+		catch (Exception e)
+		{
+		   e.printStackTrace();
+		}
+		
+	}
+	
+	public void writeToBD(Object[] arrayNamePages,HashMap<String,Double> rankingInd,
+			              HashMap<String,Double> rankingHostInd,
+			              HashMap<String,Double> rankingDomInd,
+			              HashMap<String,Double> rankingPR,
+			              HashMap<String,Double> rankingHostPR,
+			              HashMap<String,Double> rankingDomPR)
+	{	
+		try
+		{
+			Statement st = conexion.createStatement();
+			st.executeUpdate("DROP TABLE IF EXISTS `paginas`"); 
+			st.executeUpdate("DROP TABLE IF EXISTS `ranking`");
+			
+			String sentenceTablePaginas = "CREATE TABLE `paginas` (`idPagina` int(10) unsigned NOT NULL auto_increment,`dominio` text NOT NULL,PRIMARY KEY  (`idPagina`),FULLTEXT KEY `NewIndex1` (`dominio`)) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;";
+			st.executeUpdate(sentenceTablePaginas);
+			
+			String sentenceTableRanking = "CREATE TABLE `ranking` (`idPagina` int(11) unsigned NOT NULL,`Ind` float unsigned NOT NULL,`HostInd` float unsigned NOT NULL,`DomInd` float unsigned NOT NULL,`PageRank` float unsigned NOT NULL,`HostPageRank` float unsigned NOT NULL,`DomPageRank` float unsigned NOT NULL,PRIMARY KEY  (`idPagina`)) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
+			st.executeUpdate(sentenceTableRanking);
+			
+			//LLenamos la tabla de paginas y ranking a la vez
+			String namePage;
+			String sentence;
+			double indValue;
+			double hostIndValue;
+			double domIndValue;
+			double PRValue;
+			double domPRValue;
+			double hostPRValue;
+			
+			for (int i = 0 ; i < arrayNamePages.length ; ++i)
+			{
+				namePage = (String)arrayNamePages[i];
+				sentence = "insert  into `paginas`(`idPagina`,`dominio`) values (" + i + ",'" + namePage + "');";
+				st.executeUpdate(sentence);
+				
+				if (rankingInd.containsKey(namePage))
+					indValue = rankingInd.get(namePage).doubleValue();
+				else
+					indValue = 0;
+				
+				if (rankingHostInd.containsKey(namePage))
+					hostIndValue = rankingHostInd.get(namePage).doubleValue();
+				else
+					hostIndValue = 0;
+				
+				if (rankingDomInd.containsKey(namePage))
+					domIndValue = rankingDomInd.get(namePage).doubleValue();
+				else
+					domIndValue = 0;
+				
+				if (rankingPR.containsKey(namePage))
+					PRValue = rankingPR.get(namePage).doubleValue();
+				else
+					PRValue = 0;
+				
+				if (rankingHostPR.containsKey(namePage))
+					domPRValue = rankingHostPR.get(namePage).doubleValue();
+				else
+					domPRValue = 0;
+				
+				if (rankingDomPR.containsKey(namePage))
+					hostPRValue = rankingDomPR.get(namePage).doubleValue();
+				else
+					hostPRValue = 0;
+				
+				sentence = "insert  into `ranking`(`idPagina`,`Ind`,`HostInd`,`DomInd`,`PageRank`,`HostPageRank`,`DomPageRank`) values (" + i + "," + indValue + "," + hostIndValue + "," + domIndValue + "," + PRValue + "," + hostPRValue + "," + domPRValue +");" ;
+				st.executeUpdate(sentence);
+				
+			}
+			 
+		}
+		catch (SQLException s)
+		{
+		   s.printStackTrace();
+		}
+		catch (Exception e)
+		{
+		   e.printStackTrace();
+		}
+		
+		 
+		
+	}
+	
+	public void writeToBD(String namePage,ArrayList<String> arrayOfTerms)
+	{
+		StringBuilder[] arrayStrings = new StringBuilder()[3]; //Aca van los campos de texto que se graban en la BD
+		StringBuilder string1 = new StringBuilder();
+		StringBuilder string2 = new StringBuilder();
+		StringBuilder string3 = new StringBuilder();
+		int countMaxCharactersByText = 40100; //No puedo grabar mas que esta cantidad, en un campo de texto de la BD
+		String term;
+		
+		StringBuilder stringSelected;
+		for (int i = 0 ; i < arrayOfTerms.size() ; ++i)
+		{
+			term = arrayOfTerms.get(i);
+			if ((string1.length() + term.length() ) < countMaxCharactersByText) 
+			{
+				string1.append(term);
+				stringSelected = string1;
+			}
+			else
+				if ((string2.length() + term.length() ) < countMaxCharactersByText) 
+				{
+					string1.append(term);
+					stringSelected = string1;
+				}
+		}
+		
+		try
+		{
+			Statement st = conexion.createStatement();
+		}
+		catch (SQLException s)
+		{
+		   s.printStackTrace();
+		}
+		catch (Exception e)
+		{
+		   e.printStackTrace();
+		}
+		
+	}
+	
+	public void closeConection()
+	{
+		try
+		{
+			conexion.close();
+		}
+		catch (SQLException s)
+		{
+		   s.printStackTrace();
+		}
+	}
+}

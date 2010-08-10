@@ -1,0 +1,49 @@
+
+import java.util.ArrayList;
+
+//Esta clase solo contiene metodos que utilzan las clases que usan agrupamiento por dominios
+public class DomService {
+
+	private ArrayList<String> getArrayCountryes() 
+	{
+		ArrayList<String> arrayCountryes = new ArrayList<String>();
+	}
+	//Metodos
+	public static String getDom(String pageName)
+	{
+		pageName = HostService.getHost(pageName);
+		//Primero dividimos el host utlizando el separador "."
+		String[] arrayOfExtractTerms = pageName.split(".");
+		ArrayList<String> arrayTerms = new ArrayList<String>();
+		for (int i = 0 ; i < arrayOfExtractTerms.length ; ++i )
+			arrayTerms.add(arrayOfExtractTerms[i]);
+		
+		StringBuilder domString = new StringBuilder();//Aca va el dominio final
+		
+		if (arrayTerms.size() == 0 )
+			return ""; //Error
+		
+		//Verificamos si existe un identificador de pais
+		String[] arrayCountryes = {"br","es","ar"};
+		String country;
+		for (int i = 0 ; i < arrayCountryes.length ; ++i )
+		{
+			country = arrayCountryes[i];
+			if (arrayTerms[arrayTerms.length-1].equals(country))
+			{
+				domString.append("_" + country);
+				break;
+			}	
+		}
+		
+		int index = arrayTerms.length - 1;
+		if (domString.length() > 0) //Si el ultimo termino era algun pais, miro el anteior a ver si es.com o .org etc
+			index -= 1;
+		
+		if (index < 0) //Si ya no quedan elementos por evaluar
+			return ""; //Error
+		
+		String[] arrayOrg = {"com","org"};
+		
+	}
+}
