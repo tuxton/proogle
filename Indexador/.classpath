@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Codigo/Indexador/src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="Utilidades/mysql-connector-java-5.0.8-bin.jar"/>
+	<classpathentry kind="output" path="Codigo/Indexador/bin"/>
+</classpath>

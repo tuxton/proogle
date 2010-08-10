@@ -1,0 +1,87 @@
+import java.util.HashMap;
+import java.util.HashSet;
+
+
+public class HostPageRank {
+
+	//Atributos
+	public double c; //dampening factor
+	private int countDocuments; //||v||
+	private HashMap<String,HashSet<String> > hashBlocksPointTo; //I(p)
+	private HashMap<String,Double> hashPR; //PR(p)
+	private HashMap<String,HashSet<String>> hashCountPagesPointedBy; //sirve para ||o(B)||
+	private HashMap<String,Double> hashBlockPR; //GR(B)
+	
+	//Metodos
+	HostPageRank()
+	{
+		c = 0.85;
+		countDocuments = 0;
+		hashBlocksPointTo = new HashMap<String,HashSet<String> >();
+		hashPR = new HashMap<String,Double>();
+		hashCountPagesPointedBy = new HashMap<String,Integer>();
+		hashBlockPR = new HashMap<String,Double>();
+	}
+	
+	private void setIP(String nameSourcePage,Object[] arrayPageNamesRef)
+	{
+		String nameDestPage;
+		String hostSourcePage = HostService.getHost(nameSourcePage);
+		for (int i = 0 ; i < arrayPageNamesRef.length ; ++i)
+		{
+			nameDestPage = (String)arrayPageNamesRef[i];
+			if ( !(HostService.getHost(nameDestPage).equals(hostSourcePage)) )
+			{
+				if (hashBlocksPointTo.containsKey(nameDestPage))
+					hashBlocksPointTo.get(nameDestPage).add(hostSourcePage);
+				else
+				{
+					HashSet<String> hashHost = new HashSet<String>();
+					hashHost.add(hostSourcePage);
+					hashBlocksPointTo.put(nameDestPage, hashHost);
+				}
+			}
+		}
+	}
+	
+	private void setOB(String nameSourcePage,Object[] arrayPageNamesRef)
+	{
+		String hostSourcePage = HostService.getHost(nameSourcePage);
+		
+		if ( !(hashCountPagesPointedBy.containsKey(hostSourcePage)) )
+		{
+			HashSet<String> hashPages = new HashSet<String>();
+			hashCountPagesPointedBy.put(hostSourcePage, hashPages);
+		}
+		
+		String destPage;
+		for (int i = 0 ; i < arrayPageNamesRef.length ; ++i)
+		{
+			destPage = arrayPageNamesRef[i];
+			if  ( !(HostService.getHost(destPage).equals(hostSourcePage)) )
+			{
+				if (hashCountPagesPointedBy.containsKey(hostSourcePage))
+					hashCountPagesPointedBy.get(hostSourcePage).add(destPage);
+			}
+		}
+	}
+	
+	public void processInfoPage(String nameSourcePage,Object[] arrayPageNamesRef)
+	{
+		//Set ||V||
+		countDocuments++;
+		
+		if (arrayPageNamesRef != null)
+		{
+			//Set I(p)
+			setIP(nameSourcePage,arrayPageNamesRef);
+		
+			//Set ||O(B)||
+			setOB(nameSourcePage,arrayPageNamesRef);
+		}
+		
+		hashPR.put(nameSourcePage, new Double(0.0));
+			
+	}
+
+}

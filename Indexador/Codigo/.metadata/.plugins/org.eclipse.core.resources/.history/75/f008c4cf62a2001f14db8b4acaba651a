@@ -1,0 +1,69 @@
+
+import java.util.ArrayList;
+
+//Esta clase solo contiene metodos que utilzan las clases que usan agrupamiento por dominios
+public class DomService {
+
+	private static ArrayList<String> getArrayCountryes() 
+	{
+		ArrayList<String> arrayCountryes = new ArrayList<String>();
+		arrayCountryes.add("br");
+		arrayCountryes.add("es");
+		arrayCountryes.add("ar");
+		
+		return arrayCountryes;
+	}
+	
+	private static ArrayList<String> getArrayServerCategory() 
+	{
+		ArrayList<String> arrayServerCategory = new ArrayList<String>();
+		arrayServerCategory.add("com");
+		arrayServerCategory.add("org");
+		
+		return arrayServerCategory;
+	}
+	
+	//Metodos
+	public static String getDom(String pageName)
+	{
+		pageName = HostService.getHost(pageName);
+		//Primero dividimos el host utlizando el separador "."
+		String[] arrayOfExtractTerms = pageName.split(".");
+		ArrayList<String> arrayTerms = new ArrayList<String>();
+		for (int i = 0 ; i < arrayOfExtractTerms.length ; ++i )
+			arrayTerms.add(arrayOfExtractTerms[i]);
+		
+		if (arrayTerms.size() == 0 )
+			return ""; //Error
+		
+		//Verificamos si existe un identificador de pais
+		ArrayList<String> arrayCountryes = getArrayCountryes();
+		String termCountry = "";
+		String term = arrayTerms.get(arrayTerms.size()-1);
+		if ( arrayCountryes.indexOf(term) != -1 )
+		{
+			termCountry = term;
+			arrayTerms.remove(arrayTerms.size() - 1);
+		}
+		
+		if (arrayTerms.size() == 0 )
+			return ""; //Error
+		
+		//Verificamos si existe un identificador de Categoria de server (.com , .org , etc)
+		ArrayList<String> arrayServersCat = getArrayServerCategory();
+		String termServCat = "";
+		term = arrayTerms.get(arrayTerms.size()-1);
+		if ( arrayServersCat.indexOf(term) != -1 )
+		{
+			termServCat = term;
+			arrayTerms.remove(arrayTerms.size() - 1);
+		}
+		
+		if (arrayTerms.size() == 0 )
+			return ""; //Error
+		
+		//Por ultimo extraemos lo que falta
+		StringBuilder stringResult = new StringBuilder();
+		
+	}
+}

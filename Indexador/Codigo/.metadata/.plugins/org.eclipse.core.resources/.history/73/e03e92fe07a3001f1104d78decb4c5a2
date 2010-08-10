@@ -1,0 +1,15 @@
+import java.util.HashMap;
+import java.util.HashSet;
+
+
+public class HostPageRank {
+
+	//Atributos
+	public double c; //dampening factor
+	private int countDocuments; //||v||
+	private HashMap<String,HashSet<String> > hashBlocksPointTo; //I(p)
+	private HashMap<String,Double> hashPR; //PR(p)
+	private HashMap<String,Integer> hashCountPagesPointedBy; //||o(q)||
+	private HashMap<String,Double> hashBlockPR; //GR(B)
+
+}

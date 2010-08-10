@@ -1,0 +1,29 @@
+
+//Esta clase solo contiene metodos que utilzan las clases que usan agrupamiento por dominios
+public class DomService {
+
+	//Metodos
+	public static String getDom(String pageName)
+	{
+		pageName = HostService.getHost(pageName);
+		//Primero dividimos el host utlizando el separador "."
+		String[] arrayTerms = pageName.split(".");
+		StringBuilder domString = new StringBuilder();
+		
+		//Verificamos si existe un identificador de pais
+		String[] arrayCountryes = {"br","es","ar"};
+		String country;
+		for (int i = 0 ; i < arrayCountryes.length ; ++i )
+		{
+			country = arrayCountryes[i];
+			if (arrayTerms[arrayTerms.length-1].equals(country))
+			{
+				domString.append("." + country);
+				break;
+			}	
+		}
+		
+		if (domString.length() > 0) //Si el ultimo termino era algun pais, miro el anteior a ver si es.com o .org etc
+			
+	}
+}

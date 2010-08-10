@@ -1,0 +1,22 @@
+
+public class HostService {
+	
+	//Metodos Privados
+	public static String getHost(String pageName)
+	{
+		StringBuilder strPageName = new StringBuilder(pageName.toLowerCase());
+		pageName = pageName.toLowerCase();
+		
+		if (pageName.startsWith("www"))
+			strPageName.delete(0,4);
+		
+		int posBar = strPageName.indexOf("/");
+		if (posBar == -1)
+			strPageName.delete(0, strPageName.length());
+		else
+			strPageName.delete(0,posBar+1);
+		
+		return strPageName.toString();
+	}
+
+}

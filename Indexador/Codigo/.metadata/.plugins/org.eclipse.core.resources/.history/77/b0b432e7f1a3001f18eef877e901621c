@@ -1,0 +1,54 @@
+
+//Provee solo funcines utilies como eliminar las stopWords
+
+import java.util.ArrayList;
+import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class Utlities 
+{
+
+	public static void removeStopWordsFrom(ArrayList<String> arrayTerms)
+	{
+	
+		File fileStopWords = new File( "esto.txt" )
+		if ( fileStopWords.exists() )
+		{
+			
+			try
+			{
+				BufferedReader bufferRead = new BufferedReader( new FileReader( fileStopWords ) );
+				
+				//Creamos un array con todos los StopWords
+				String termStopWord;
+				ArrayList<String> arrayStopWords = new ArrayList<String>();
+				do
+				{
+					termStopWord = bufferRead.readLine();
+					arrayStopWords.add(termStopWord);
+				}
+				while (termStopWord != null);
+				
+				//Eliminamos los Stop Words del array de terminos
+				for (int i = 0 ; i < arrayStopWords.size() ; ++i)
+				{
+					
+				}
+			}
+			catch (FileNotFoundException f)
+			{
+				f.printStackTrace();
+			}
+			catch (IOException e)
+			{
+				e.printStackTrace();
+			}
+			
+		}
+		else
+			System.out.println("El archivo de StopWords no se encuentra.");
+	}
+}

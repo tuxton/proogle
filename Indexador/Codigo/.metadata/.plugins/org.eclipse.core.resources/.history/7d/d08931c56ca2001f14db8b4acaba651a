@@ -1,0 +1,45 @@
+import java.util.HashMap;
+import java.util.HashSet;
+
+
+public class DomIndegre {
+	//Atributos
+	private HashMap<String,HashSet<String> > ranking; //Va a guardar par <pagina,lista de bloques que hacen referencia a la misma>
+	
+	
+	//Metodos publicos
+	DomIndegre()
+	{
+		ranking = new HashMap<String,HashSet<String> >();
+	}
+	
+	public void processInfoPage(String namePage,Object[] arrayPageNamesRef)
+	{
+		//Recive una pagina y un array con las paginas a las cuales hace referencia
+		//Con esto arma el ranking
+		String DomSourcePage = DomService.getDom(namePage);
+		String DomDestPage;
+		for (int i = 0 ; i < arrayPageNamesRef.length ; ++i)
+		{
+			DomDestPage = DomService.getDom((String)arrayPageNamesRef[i]);
+			if (!(DomDestPage.equals(DomSourcePage)) )
+			{
+				//Si el host fuente ya existe entre los que ya se encontraron para la pagina destino, no lo agrego
+				if ( ranking.containsKey(DomDestPage) )
+				{
+					HashSet<String> hashDomDestPage = ranking.get(DomDestPage);
+					if (!(hashHostDestPage.contains(hostSourcePage)))
+						hashHostDestPage.add(hostSourcePage);
+					 	
+				}
+				else
+				{
+					HashSet<String> hashHostDestPage = new HashSet<String>();
+					hashHostDestPage.add(hostSourcePage);
+					ranking.put(hostDestPage, hashHostDestPage );
+				}
+			}
+		}
+		
+	}
+}

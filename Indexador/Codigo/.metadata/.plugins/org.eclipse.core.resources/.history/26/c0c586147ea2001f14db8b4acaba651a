@@ -1,0 +1,62 @@
+
+public final class Indexator {
+
+	/**
+	 * @param args
+	 */
+	
+	//Atributos
+	private DirectoryReader dirReader;
+	private XMLParser xmlParser;
+	private String pathIndex;
+	private Indegre ind;
+	private HostIndegre hostInd;
+	
+	//Metodos
+	//Constructor
+	Indexator(String path)
+	{
+		dirReader = new DirectoryReader(path);
+		xmlParser = new XMLParser();
+		pathIndex = path;
+		ind = new Indegre();
+		hostInd = new HostIndegre();
+	}
+	
+	void startIndex()
+	{
+		String absFilePath;
+		String namePage;
+		do
+		{
+			namePage = dirReader.getProxNameDoc();
+			absFilePath = pathIndex + "/" + namePage;
+			if (dirReader.readResult != TypeReadResult.END_OF_FILE)
+			{
+				System.out.println("Parseando: " + absFilePath);
+				xmlParser.parseHTML(absFilePath);
+				if (xmlParser.arrayOfOutLinks.size() > 0)
+				{
+					System.out.println("Links Encontrados: "+ xmlParser.arrayOfOutLinks.toString());
+					ind.processInfoPage(xmlParser.arrayOfOutLinks.toArray());
+					hostInd.processInfoPage(namePage, xmlParser.arrayOfOutLinks.toArray());
+				}
+			}
+		}
+		while (dirReader.readResult != TypeReadResult.END_OF_FILE);
+		
+		System.out.println("Escribiendo a la BD de indegree");
+		ind.writeToBD();
+		System.out.println("Escribiendo a la BD de HostIndegree");
+		hostInd.writeToBD();
+	}
+	
+	//Main
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hola 7519");
+		Indexator myIndex = new Indexator(args[0]);
+		myIndex.startIndex();
+	}
+
+}

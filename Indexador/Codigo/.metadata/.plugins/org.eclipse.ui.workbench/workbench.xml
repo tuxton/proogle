@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="16" version="2.0">
+<workbenchAdvisor/>
+<window height="1217" maximized="true" width="1024" x="-5" y="24">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout locked="0">
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="116" y="26"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="108" y="26"/>
+<coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="68" y="26"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="92" y="26"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="132" y="26"/>
+<coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="164" y="26"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1280359513533" focus="true" label="Workspace - Java">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+<part id="13"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Indexator.java" partName="Indexator.java" path="/home/maxi/Documentos/TP_7519/Indexador/Codigo/Indexador/src/Indexator.java" title="Indexator.java" tooltip="Indexador/src/Indexator.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Indexador/src/Indexator.java"/>
+<editorState selectionHorizontalPixel="58" selectionLength="0" selectionOffset="2003" selectionTopPixel="330"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DirectoryReader.java" partName="DirectoryReader.java" path="/home/maxi/Documentos/TP_7519/Indexador/Codigo/Indexador/src/DirectoryReader.java" title="DirectoryReader.java" tooltip="Indexador/src/DirectoryReader.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Indexador/src/DirectoryReader.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="869" selectionTopPixel="296"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="XMLParser.java" partName="XMLParser.java" path="/home/maxi/Documentos/TP_7519/Indexador/Codigo/Indexador/src/XMLParser.java" title="XMLParser.java" tooltip="Indexador/src/XMLParser.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Indexador/src/XMLParser.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="724" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Indegre.java" partName="Indegre.java" path="/home/maxi/Documentos/TP_7519/Indexador/Codigo/Indexador/src/Indegre.java" title="Indegre.java" tooltip="Indexador/src/Indegre.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Indexador/src/Indegre.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1368" selectionTopPixel="472"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HostIndegre.java" partName="HostIndegre.java" path="/home/maxi/Documentos/TP_7519/Indexador/Codigo/Indexador/src/HostIndegre.java" title="HostIndegre.java" tooltip="Indexador/src/HostIndegre.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Indexador/src/HostIndegre.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="667" selectionTopPixel="693"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HostService.java" partName="HostService.java" path="/home/maxi/Documentos/TP_7519/Indexador/Codigo/Indexador/src/HostService.java" title="HostService.java" tooltip="Indexador/src/HostService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Indexador/src/HostService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="487" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DomService.java" partName="DomService.java" path="/home/maxi/Documentos/TP_7519/Indexador/Codigo/Indexador/src/DomService.java" title="DomService.java" tooltip="Indexador/src/DomService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Indexador/src/DomService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1364" selectionTopPixel="426"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DomIndegre.java" partName="DomIndegre.java" path="/home/maxi/Documentos/TP_7519/Indexador/Codigo/Indexador/src/DomIndegre.java" title="DomIndegre.java" tooltip="Indexador/src/DomIndegre.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Indexador/src/DomIndegre.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1226" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PageRank.java" partName="PageRank.java" path="/home/maxi/Documentos/TP_7519/Indexador/Codigo/Indexador/src/PageRank.java" title="PageRank.java" tooltip="Indexador/src/PageRank.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Indexador/src/PageRank.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2181" selectionTopPixel="1156"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HostPageRank.java" partName="HostPageRank.java" path="/home/maxi/Documentos/TP_7519/Indexador/Codigo/Indexador/src/HostPageRank.java" title="HostPageRank.java" tooltip="Indexador/src/HostPageRank.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Indexador/src/HostPageRank.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5069" selectionTopPixel="2988"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DomPageRank.java" partName="DomPageRank.java" path="/home/maxi/Documentos/TP_7519/Indexador/Codigo/Indexador/src/DomPageRank.java" title="DomPageRank.java" tooltip="Indexador/src/DomPageRank.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Indexador/src/DomPageRank.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5384" selectionTopPixel="2988"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DataBaseService.java" partName="DataBaseService.java" path="/home/maxi/Documentos/TP_7519/Indexador/Codigo/Indexador/src/DataBaseService.java" title="DataBaseService.java" tooltip="Indexador/src/DataBaseService.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Indexador/src/DataBaseService.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="170" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Utlities.java" partName="Utlities.java" path="/home/maxi/Documentos/TP_7519/Indexador/Codigo/Indexador/src/Utlities.java" title="Utlities.java" tooltip="Indexador/src/Utlities.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Indexador/src/Utlities.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="376" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="StopWords" partName="StopWords" path="/home/maxi/Documentos/TP_7519/Indexador/Codigo/Indexador/src/FilesUtilities/StopWords" title="StopWords" tooltip="Indexador/src/FilesUtilities/StopWords" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Indexador/src/FilesUtilities/StopWords"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2151" selectionTopPixel="0"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.search.ui.views.SearchView" partName="Search">
+<viewState isPinned="false">
+<view IMemento.internal.id="org.eclipse.jdt.ui.JavaSearchResultPage" org.eclipse.jdt.search.resultpage.grouping="3" org.eclipse.jdt.search.resultpage.limit="1000" org.eclipse.jdt.search.resultpage.limit_enabled="TRUE" org.eclipse.jdt.search.resultpage.sorting="1" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2"/>
+<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="2" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
+<viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="">
+<customFilters userDefinedPatternsEnabled="false">
+<xmlDefinedFilters>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.FieldsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter" isEnabled="true"/>
+<child filterId="org.eclipse.mylyn.java.ui.MembersFilter" isEnabled="false"/>
+</xmlDefinedFilters>
+</customFilters>
+</viewState>
+</view>
+<view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
+<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc">
+<viewState/>
+</view>
+</views>
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaElementCreationActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.junit.JUnitActionSet"/>
+<show_view_action id="org.eclipse.jdt.ui.PackageExplorer"/>
+<show_view_action id="org.eclipse.jdt.ui.TypeHierarchy"/>
+<show_view_action id="org.eclipse.jdt.ui.SourceView"/>
+<show_view_action id="org.eclipse.jdt.ui.JavadocView"/>
+<show_view_action id="org.eclipse.search.ui.views.SearchView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.ui.texteditor.TemplatesView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewInterfaceCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewEnumCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewAnnotationCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSourceFolderCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSnippetFileCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewJavaWorkingSetWizard"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<new_wizard_action id="org.eclipse.jdt.junit.wizards.NewTestCaseCreationWizard"/>
+<new_wizard_action id="org.eclipse.mylyn.tasks.ui.wizards.new.repository.task"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
+<fastViewBars>
+<fastViewBar fastViewLocation="1024" id="bottom" orientation="256" selectedTabId="org.eclipse.ui.console.ConsoleView" style="0">
+<fastViews>
+<view id="org.eclipse.jdt.ui.JavadocView" ratio="0.3"/>
+<view id="org.eclipse.jdt.ui.SourceView" ratio="0.3"/>
+<view id="org.eclipse.search.ui.views.SearchView" ratio="0.29883137"/>
+<view id="org.eclipse.ui.console.ConsoleView" ratio="0.29883137"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
+<layout>
+<mainWindow>
+<info folder="true" part="left">
+<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1fac7cf" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="left">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.27245805" ratioLeft="276" ratioRight="737" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.8402778" ratioLeft="484" ratioRight="92" relationship="4" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.JavadocView" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.SourceView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@11c4041" ratio="0.74934036" ratioLeft="568" ratioRight="190" relationship="2" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.mylyn.tasks.ui.views.tasks" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="right" ratio="0.5" ratioLeft="222" ratioRight="222" relationship="4" relative="org.eclipse.ui.internal.ViewStack@11c4041">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<page content="org.eclipse.ui.texteditor.TemplatesView" label="LabelNotFound"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Indexador/src/DataBaseService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Indexador/src/XMLParser.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Indexador/src/Indexator.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Indexador/src/Utlities.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Indexador/src/FilesUtilities/StopWords"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Indexador/src/HostPageRank.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Indexador/src/PageRank.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Indexador/src/DomPageRank.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Indexador/src/DomIndegre.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Indexador/src/HostIndegre.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Indexador/src/DomService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Indexador/src/HostService.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Indexador/src/Indexator.java"/>
+</editors>
+<item historyLabel="DataBaseService.java" index="0">
+<position info="not_deleted" x="4961" y="0"/>
+</item>
+<item historyLabel="Indexator.java" index="2">
+<position info="not_deleted" x="1735" y="0"/>
+</item>
+<item historyLabel="DataBaseService.java" index="0">
+<position info="not_deleted" x="4961" y="0"/>
+</item>
+<item historyLabel="DataBaseService.java" index="0">
+<position info="not_deleted" x="4733" y="0"/>
+</item>
+<item historyLabel="Indexator.java" index="2">
+<position info="not_deleted" x="1735" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="1394" y="0"/>
+</item>
+<item historyLabel="DataBaseService.java" index="0">
+<position info="not_deleted" x="170" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="1394" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="280" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="1394" y="0"/>
+</item>
+<item historyLabel="Indexator.java" index="2">
+<position info="not_deleted" x="1735" y="0"/>
+</item>
+<item historyLabel="XMLParser.java" index="1">
+<position info="not_deleted" x="724" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="1394" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="1213" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="1313" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="722" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="641" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="682" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="817" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="777" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="933" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="1026" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="1066" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="1064" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="981" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="1118" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="1152" y="0"/>
+</item>
+<item historyLabel="StopWords" index="4">
+<position info="not_deleted" x="2151" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="400" y="0"/>
+</item>
+<item historyLabel="StopWords" index="4">
+<position info="not_deleted" x="2151" y="0"/>
+</item>
+<item historyLabel="Indexator.java" index="2">
+<position info="not_deleted" x="1018" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="400" y="0"/>
+</item>
+<item historyLabel="Indexator.java" index="2">
+<position info="not_deleted" x="2067" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="400" y="0"/>
+</item>
+<item historyLabel="StopWords" index="4">
+<position info="not_deleted" x="2151" y="0"/>
+</item>
+<item historyLabel="Utlities.java" index="3">
+<position info="not_deleted" x="400" y="0"/>
+</item>
+<item historyLabel="HostPageRank.java" index="5">
+<position info="not_deleted" x="5069" y="0"/>
+</item>
+<item historyLabel="PageRank.java" index="6">
+<position info="not_deleted" x="2972" y="0"/>
+</item>
+<item historyLabel="DomPageRank.java" index="7">
+<position info="not_deleted" x="5384" y="0"/>
+</item>
+<item historyLabel="HostPageRank.java" index="5">
+<position info="not_deleted" x="5069" y="0"/>
+</item>
+<item historyLabel="DomIndegre.java" index="8">
+<position info="not_deleted" x="1226" y="0"/>
+</item>
+<item historyLabel="HostIndegre.java" index="9">
+<position info="not_deleted" x="667" y="0"/>
+</item>
+<item historyLabel="HostPageRank.java" index="5">
+<position info="not_deleted" x="5069" y="0"/>
+</item>
+<item historyLabel="DomPageRank.java" index="7">
+<position info="not_deleted" x="5384" y="0"/>
+</item>
+<item historyLabel="PageRank.java" index="6">
+<position info="not_deleted" x="2201" y="8"/>
+</item>
+<item historyLabel="DomService.java" index="10">
+<position info="not_deleted" x="1364" y="0"/>
+</item>
+<item historyLabel="HostService.java" index="11">
+<position info="not_deleted" x="416" y="0"/>
+</item>
+<item historyLabel="Indexator.java" index="12">
+<position info="not_deleted" x="2003" y="0"/>
+</item>
+<item historyLabel="DomService.java" index="10">
+<position info="not_deleted" x="1364" y="0"/>
+</item>
+<item active="true" historyLabel="HostService.java" index="11">
+<position info="not_deleted" x="413" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="left"/>
+</trimArea>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
+</trimArea>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="bottom"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="StopWords" tooltip="Indexador/src/FilesUtilities/StopWords">
+<persistable path="/Indexador/src/FilesUtilities/StopWords"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Utlities.java" tooltip="Indexador/src/Utlities.java">
+<persistable path="/Indexador/src/Utlities.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DataBaseService.java" tooltip="Indexador/src/DataBaseService.java">
+<persistable path="/Indexador/src/DataBaseService.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DomPageRank.java" tooltip="Indexador/src/DomPageRank.java">
+<persistable path="/Indexador/src/DomPageRank.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HostPageRank.java" tooltip="Indexador/src/HostPageRank.java">
+<persistable path="/Indexador/src/HostPageRank.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PageRank.java" tooltip="Indexador/src/PageRank.java">
+<persistable path="/Indexador/src/PageRank.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DomIndegre.java" tooltip="Indexador/src/DomIndegre.java">
+<persistable path="/Indexador/src/DomIndegre.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DomService.java" tooltip="Indexador/src/DomService.java">
+<persistable path="/Indexador/src/DomService.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HostService.java" tooltip="Indexador/src/HostService.java">
+<persistable path="/Indexador/src/HostService.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HostIndegre.java" tooltip="Indexador/src/HostIndegre.java">
+<persistable path="/Indexador/src/HostIndegre.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Indegre.java" tooltip="Indexador/src/Indegre.java">
+<persistable path="/Indexador/src/Indegre.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="XMLParser.java" tooltip="Indexador/src/XMLParser.java">
+<persistable path="/Indexador/src/XMLParser.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DirectoryReader.java" tooltip="Indexador/src/DirectoryReader.java">
+<persistable path="/Indexador/src/DirectoryReader.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Indexator.java" tooltip="Indexador/src/Indexator.java">
+<persistable path="/Indexador/src/Indexator.java"/>
+</file>
+</mruList>
+</workbench>

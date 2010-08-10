@@ -1,0 +1,23 @@
+<!--DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd"-->
+
+<html>
+
+<head>
+<title>Philips</title>
+</head>
+
+<body>
+
+<h1>Servicio Tecnico</h1>
+
+<hr></hr>
+
+<p>Para comunicarse con el servicio tecnico debe llamar al numero 45678989.En cualquier caso debera enviar el 
+producto a cualquiera de las sedes del siguiente Link</p>
+
+<a href="www_Philips_com-Sedes" >Sedes</a>
+
+
+</body>
+</html>
