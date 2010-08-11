@@ -34,7 +34,7 @@ public final class Indexator {
 	
 	void startIndex()
 	{
-		DataBaseService DBServ = new DataBaseService("tuxton");
+		DataBaseService DBServ = new DataBaseService("proogle");
 		ArrayList<String> arrayNamePages = new ArrayList<String>();
 		
 		String absFilePath;
