@@ -16,7 +16,7 @@ require_once 'Funciones.php';
         <div align="center">
             <br/>
             <br/>
-            <img src="PRoogle_logo.jpg" height="150"  class="buscador" alt="PRoogle"/>
+            <a href="https://code.google.com/p/proogle/" ><img src="PRoogle_logo.jpg" height="150"  class="buscador" alt="PRoogle" title="El PageRank de Google"/></a>
             <form id="fbuscador" name="fbuscador" method="get">
                 <input class="buscador" size="50" type="text" name="q" value="<?php echo (isset($_GET['q']))?$_GET['q']:'';?>"/>
                 <br/>
