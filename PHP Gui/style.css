@@ -69,6 +69,12 @@
 
     }
 
+    input.buscador.disableInput{
+        background:#DDD;
+        color: #6F6F6F;
+        border: solid 2px #4F81BD;
+    }
+
     input.boton_buscador .border
     {
         border: 1px solid #a0a0a0;
