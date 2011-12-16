@@ -18,7 +18,7 @@ public class DataBaseService {
 		{
 		   Class.forName("com.mysql.jdbc.Driver");
 		   String paramOne = "jdbc:mysql://localhost/" + nameBD;
-		   conexion = DriverManager.getConnection (paramOne,"root", "");
+		   conexion = DriverManager.getConnection (paramOne,"root", "admin");
 		   
 		   Statement st = conexion.createStatement();
 		   st.executeUpdate("DROP TABLE IF EXISTS `articulos`"); 

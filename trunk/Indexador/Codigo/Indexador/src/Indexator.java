@@ -42,7 +42,7 @@ public final class Indexator {
 		do
 		{
 			namePage = dirReader.getProxNameDoc();
-			absFilePath = pathIndex + "\\" + namePage;
+			absFilePath = pathIndex + "/" + namePage;
 			if (dirReader.readResult != TypeReadResult.END_OF_FILE)
 			{
 				arrayNamePages.add(namePage);
