@@ -25,11 +25,11 @@ require_once 'Funciones.php';
                 <div class="rta">
                     <div class="info">Seleccione el tipo de Filtro:</div>
                     <input class="boton_buscador" type="submit" name="filter" value="PageRank"/>
-                    <input class="boton_buscador" type="submit" name="filter" value="DomPageRank" />
+                    <input class="boton_buscador" type="submit" name="filter" value="HyDomPageRank" />
                     <input class="boton_buscador" type="submit" name="filter" value="Ind" />
-                    <input class="boton_buscador" type="submit" name="filter" value="HostInd" />
-                    <input class="boton_buscador" type="submit" name="filter" value="HostPageRank" />
-                    <input class="boton_buscador" type="submit" name="filter" value="DomInd" />
+                    <input class="boton_buscador" type="submit" name="filter" value="HyHostInd" />
+                    <input class="boton_buscador" type="submit" name="filter" value="HyHostPageRank" />
+                    <input class="boton_buscador" type="submit" name="filter" value="HyDomInd" />
                     
                     <div class="check" align="left">
                         <br/>
