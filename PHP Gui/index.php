@@ -8,15 +8,16 @@ require_once 'Funciones.php';
         <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
         <script src="http://www.google.com/jsapi"></script>
         <script>google.load("jquery", "1.2.6");</script>
-        <script>google.load("jqueryui", "1.5.3");</script> 
+        <script>google.load("jqueryui", "1.5.3");</script>
+	<script src="jquery-1.2.6.js" type="text/javascript"></script> 
         <script src="main.js" type="text/javascript"></script>
-        <title>Teoria de la Comunicaci&oacute;n</title>
+        <title>Aplicaciones Informaticas - Proogle</title>
     </head>
     <body>
         <div align="center">
             <br/>
             <br/>
-            <a href="https://code.google.com/p/proogle/" ><img src="PRoogle_logo.jpg" height="150"  class="buscador" alt="PRoogle" title="El PageRank de Google"/></a>
+            <a href=# ><img src="PRoogle_logo.jpg" height="150"  class="buscador" alt="PRoogle" title="RI basado en hipergrafos"/></a>
             <form id="fbuscador" name="fbuscador" method="get">
                 <input class="buscador" size="50" type="text" name="q" value="<?php echo (isset($_GET['q']))?$_GET['q']:'';?>"/>
                 <br/>
