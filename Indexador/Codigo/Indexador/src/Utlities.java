@@ -14,7 +14,7 @@ public class Utlities
 	public static void removeStopWordsFrom(ArrayList<String> arrayTerms)
 	{
 	
-		File fileStopWords = new File( "C:\\Documents and Settings\\tonga\\workspace\\Indexador\\Codigo\\Indexador\\src\\FilesUtilities\\StopWords" );
+		File fileStopWords = new File( "/var/www/proogle/indexador/Codigo/Indexador/src/FilesUtilities/StopWords" );
 		if ( fileStopWords.exists() )
 		{
 			

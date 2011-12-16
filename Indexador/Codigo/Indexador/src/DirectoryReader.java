@@ -6,6 +6,9 @@ enum TypeReadResult{END_OF_FILE,OK}
 
 public final class DirectoryReader {
 
+	//constantes
+	private static String SVN_FOLDER = ".svn";
+	
 	//Atributos
 	private String[] arrayFiles;
 	private int indexArrayFiles;
@@ -32,6 +35,11 @@ public final class DirectoryReader {
 		
 		if (indexArrayFiles < arrayFiles.length)
 		{
+			if (arrayFiles[indexArrayFiles].toString().compareTo(SVN_FOLDER.toString()) == 0)
+			{
+				++indexArrayFiles;
+				return getProxNameDoc();
+			}
 			nameDoc = arrayFiles[indexArrayFiles];
 			++indexArrayFiles;
 			readResult = TypeReadResult.OK;

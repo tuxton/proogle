@@ -82,7 +82,8 @@ public final class XMLParser
 			for (int i = 0 ; i < strTemp.length() ; ++i)
 			{
 				char c = Character.toLowerCase(strTemp.charAt(i));
-				if (!( ((c >= '0') && (c <= '9')) || ((c >= 'a') && (c <= 'z')) ))//|| (c == 'á') || (c == 'é') || (c == 'í') || (c == 'ó') || (c == 'ú') || (c == 'ñ')))
+				if (!( ((c >= '0') && (c <= '9')) || ((c >= 'a') && (c <= 'z')) //))//
+						|| (c == 'á') || (c == 'é') || (c == 'í') || (c == 'ó') || (c == 'ú') || (c == 'ñ')))
 					strTemp.setCharAt(i,' ');
 			}
 			return strTemp.toString();
