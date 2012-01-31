@@ -179,4 +179,31 @@
     {
         background: #eeeeee;
     }
-
+	div.MRR 
+    {
+	border: 2px solid #0099ff;
+	color: white;
+	background: #0099ff;
+	font-family: currier;
+	padding: 4px;
+	list-style: none;
+	}
+	div.MRRContent 
+    {
+	border: 2px solid #0099ff;
+	color: blue;
+	background: #ffefff;
+	font-family: currier;
+	padding: 4px;
+	height: 230px;
+	list-style: none;
+	}
+	div.MRRContent div p
+    {
+	color: blue;
+	background: #ffefff;
+	font-family: currier;
+	padding: 1px;
+	font-size:68;
+	text-align:center;
+	}

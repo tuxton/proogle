@@ -1,139 +1,42 @@
+blog,1
+pablo,1
+blog pablo,1
+blog de pablo,1
+deportes,2
+uol deportes,2
 doh,3
-racing,17
+electrodom,4
+opinion,5
+foro opinion,5
+foroopinion,5
+cafeteras,6
+foro cafeteras,6
+foro doh,7
+foro opinion doh,7
+foro libre,8
+libre,8
+foro philips,9
+guitarra on line,10
+guitarra notas on line,11
+notas guitarra online,11
+guitarra notas,11
+notas,11
+guitarra patrocinantes,12
+patrocinantes,12
+guitarra on line patrocinantes,12
+uol juegos,13
+juegos,13
 philips,14
-juego,13
-foro precio,5
-fain,12
-uruguay,15
-cafe,4
-www com,14
-guitarra,3
-oficial,17
-historia oficial,17
-club,17
-actual,5
-blog de pablo guitarra,1
-deporte jugador,19
-notas deporte,19
-doh,3
+philips sedes,15
+sedes de philips,15
+service,16
+service tecnico,16
+servicio tecnico,16
+philips service tecnico,16
 racing,17
-philips,14
-juego,13
-foro precio,5
-fain,12
-uruguay,15
-cafe,4
-www com,14
-guitarra,3
-oficial,17
-historia oficial,17
-club,17
-actual,5
-blog de pablo guitarra,1
-deporte jugador,19
-notas deporte,19
-doh,3
-racing,17
-philips,14
-juego,13
-foro precio,5
-fain,12
-uruguay,15
-cafe,4
-www com,14
-guitarra,3
-oficial,17
-historia oficial,17
-club,17
-actual,5
-blog de pablo guitarra,1
-deporte jugador,19
-notas deporte,19
-doh,3
-racing,17
-philips,14
-juego,13
-foro precio,5
-fain,12
-uruguay,15
-cafe,4
-www com,14
-guitarra,3
-temas discucion,5
-austriaco,2
-austriaco,5
-austriaco,4
-austriaco,3
-oficial,17
-historia oficial,17
-club,17
-actual,5
-blog de pablo guitarra,1
-deporte jugador,19
-notas deporte,19
-doh,3
-racing,17
-philips,14
-juego,13
-foro precio,5
-fain,12
-uruguay,15
-cafe,4
-www com,14
-guitarra,3
-oficial,17
-historia oficial,17
-club,17
-doh,1
-racing,1
-racing,2
-blog de pablo guitarra,1
-deporte jugador,19
-notas deporte,19
-doh,3
-racing,17
-philips,14
-juego,13
-foro precio,5
-racing,3
-actual,5
-fain,12
-uruguay,15
-cafe,4
-www com,14
-racing,3
-racing,3
-racing,3
-guitarra,3
-oficial,17
-historia oficial,17
-club,17
-actual,5
-blog de pablo guitarra,1
-deporte jugador,19
-notas deporte,19
-doh,3
-racing,17
-philips,14
-juego,13
-foro precio,5
-fain,12
-uruguay,15
-cafe,4
-www com,14
-doh,1
-racing,2
-juegos,1
-juegos,1
-juegos,1
-juegos,1
-juegos,1
-juegos,1
-juegos,1
-oficial,17
-historia oficial,17
-club,17
-actual,5
-blog de pablo guitarra,1
-deporte jugador,19
-notas deporte,19
+racing club,17
+uol,18
+destacados,19
+uol destacados,19
+noticias,20
+zona noticias,20

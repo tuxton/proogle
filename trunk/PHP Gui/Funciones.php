@@ -123,7 +123,7 @@ function getResultMMR($db,$metodoRanking){
 
         $resultado = getCalculoMRR($db,$metodoRanking,$datosMRR);
         if($resultado > 0){
-            return "<br><div>El calculo de MRR sobre un total de <strong>".count($datosMRR)."</strong> consultas  arroja el porcentaje: <strong>$resultado</strong></div><br>";
+            return "<br><div class='MRR'><strong>$metodoRanking:</strong></div><div class='MRRContent'>El calculo de MRR sobre un total de <strong>".count($datosMRR)."</strong> consultas  arroja el valor: <strong>$resultado</strong><br><div><p>".round($resultado*100,2)." %</p></div></div><br>";
         }
     }
     return "<br><div class=\"info\">La consulta no obtuvo resultados. (verifique el archivo de consultas)</div><br>";
