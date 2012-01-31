@@ -19,21 +19,23 @@ require_once 'Funciones.php';
             <br/>
             <a href=# ><img src="PRoogle_logo.jpg" height="150"  class="buscador" alt="PRoogle" title="RI basado en hipergrafos"/></a>
             <form id="fbuscador" name="fbuscador" method="get">
+                <br/>
                 <input class="buscador" size="50" type="text" name="q" value="<?php echo (isset($_GET['q']))?$_GET['q']:'';?>"/>
                 <br/>
                 <br/>
                 <div class="rta">
                     <div class="info">Seleccione el tipo de Filtro:</div>
+					<br/>
                     <input class="boton_buscador" type="submit" name="filter" value="PageRank"/>
                     <input class="boton_buscador" type="submit" name="filter" value="HyDomPageRank" />
+                    <input class="boton_buscador" type="submit" name="filter" value="HyHostPageRank" /> |
                     <input class="boton_buscador" type="submit" name="filter" value="Ind" />
-                    <input class="boton_buscador" type="submit" name="filter" value="HyHostInd" />
-                    <input class="boton_buscador" type="submit" name="filter" value="HyHostPageRank" />
                     <input class="boton_buscador" type="submit" name="filter" value="HyDomInd" />
+                    <input class="boton_buscador" type="submit" name="filter" value="HyHostInd" />
                     
                     <div class="check" align="left">
                         <br/>
-                        <input class="check_mmr" type="checkbox" onclick="disableBuscador()" name="mrr" value="true">Procesar archivo por lote</input>
+                        <input class="check_mmr" type="checkbox" onclick="disableBuscador()" name="mrr" value="true" <?php echo (isset($_GET['mrr']) and $_GET['mrr'])?'checked':'';?> >Procesar archivo por lote</input>
                     </div>
                 </div>
             </form>
