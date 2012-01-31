@@ -16,7 +16,7 @@ public class HostIndegre
 	
 	public void processInfoPage(String namePage,Object[] arrayPageNamesRef)
 	{
-		//Recive una pagina y un array con las paginas a las cuales hace referencia
+		//Recibe una pagina y un array con las paginas a las cuales hace referencia
 		//Con esto arma el ranking
 		String hostSourcePage = HostService.getHost(namePage); 
 		String hostDestPage;
@@ -52,7 +52,7 @@ public class HostIndegre
 		{
 			String namePage = (String) arrayNamesPages[i];
 			int countBlocks = ranking.get(namePage).size();
-			System.out.println(namePage + ":        " + countBlocks);
+			System.out.println(Utlities.fixUrl(namePage) + "	" + countBlocks);
 		}
 	}
 	

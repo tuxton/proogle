@@ -2,7 +2,7 @@
 import java.util.HashMap;
 
 
-public class Indegre {
+public abstract class Indegre {
 	
 	//Atributos
 	private HashMap<String,Integer> ranking;//Tendra <pagina,puntaje>
@@ -35,11 +35,11 @@ public class Indegre {
 	{
 		//Escribe a la Base de Datos los puntajes que tiene hasta el momento
 		Object[] arrayKeys = ranking.keySet().toArray();
-		String pageName;
+		String namePage;
 		for (int i = 0 ; i < arrayKeys.length ; ++i)
 		{
-			pageName = (String)arrayKeys[i];
-			System.out.println(pageName + "           " + ranking.get(pageName).intValue());
+			namePage = (String)arrayKeys[i];
+			System.out.println(Utlities.fixUrl(namePage) + "	" + ranking.get(namePage).intValue());
 		}
 	}
 	

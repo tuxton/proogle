@@ -1,5 +1,5 @@
 
-//Provee solo funcines utilies como eliminar las stopWords
+//Provee solo funciones utilies como eliminar las stopWords
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -13,8 +13,9 @@ public class Utlities
 
 	public static void removeStopWordsFrom(ArrayList<String> arrayTerms)
 	{
-	
-		File fileStopWords = new File( "/var/www/proogle/indexador/Codigo/Indexador/src/FilesUtilities/StopWords" );
+
+		File fileStopWords = new File( "Codigo" + File.separator + "Indexador" + File.separator + "bin" + File.separator + "FilesUtilities" + File.separator + "StopWords" );
+		fileStopWords.getAbsolutePath();
 		if ( fileStopWords.exists() )
 		{
 			
@@ -33,12 +34,6 @@ public class Utlities
 				while (termStopWord != null);
 				
 				//Eliminamos los Stop Words del array de terminos
-				/*for (int i = 0 ; i < arrayStopWords.size() ; ++i)
-				{
-					termStopWord = arrayStopWords.get(i);
-					if (arrayTerms.contains(termStopWord))
-						arrayTerms.remove(termStopWord);
-				}*/
 				if (arrayTerms.removeAll(arrayStopWords))
 					System.out.println("Se han removido StopWords");
 			}
@@ -53,6 +48,13 @@ public class Utlities
 			
 		}
 		else
-			System.out.println("El archivo de StopWords no se encuentra.");
+			System.out.println("El archivo de StopWords no se encuentra."+ fileStopWords);
 	}
+	
+	public static String fixUrl(String url){
+		url = url.replace("_", ".");
+		url = url.replace("-", "/");
+		return url;
+	} 
+
 }

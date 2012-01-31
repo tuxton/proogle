@@ -31,7 +31,6 @@ public class DomIndegre {
 				{
 					HashSet<String> hashDomDestPage = ranking.get(nameDestPage);
 					hashDomDestPage.add(DomSourcePage);
-					 	
 				}
 				else
 				{
@@ -52,7 +51,7 @@ public class DomIndegre {
 		{
 			String namePage = (String) arrayNamesPages[i];
 			int countBlocks = ranking.get(namePage).size();
-			System.out.println(namePage + ":        " + countBlocks);
+			System.out.println(Utlities.fixUrl(namePage) + "	" + countBlocks);
 		}
 	}
 	

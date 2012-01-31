@@ -10,6 +10,7 @@ public class DataBaseService {
 	
 	//Atributos
 	private Connection conexion;
+	private static Integer MaxCharacterReg = 40100; //cantidad maxima de caracteres en un campo de texto
 	
 	//Metodos
 	DataBaseService(String nameBD)
@@ -18,7 +19,7 @@ public class DataBaseService {
 		{
 		   Class.forName("com.mysql.jdbc.Driver");
 		   String paramOne = "jdbc:mysql://localhost/" + nameBD;
-		   conexion = DriverManager.getConnection (paramOne,"root", "admin");
+		   conexion = DriverManager.getConnection (paramOne,"root", "");
 		   
 		   Statement st = conexion.createStatement();
 		   st.executeUpdate("DROP TABLE IF EXISTS `articulos`"); 
@@ -51,7 +52,7 @@ public class DataBaseService {
 			String sentenceTablePaginas = "CREATE TABLE `paginas` (`idPagina` int(10) unsigned NOT NULL auto_increment,`dominio` text NOT NULL,PRIMARY KEY  (`idPagina`),FULLTEXT KEY `NewIndex1` (`dominio`)) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;";
 			st.executeUpdate(sentenceTablePaginas);
 			
-			String sentenceTableRanking = "CREATE TABLE `ranking` (`idPagina` int(11) unsigned NOT NULL,`Ind` float unsigned NOT NULL,`HostInd` float unsigned NOT NULL,`DomInd` float unsigned NOT NULL,`PageRank` float unsigned NOT NULL,`HostPageRank` float unsigned NOT NULL,`DomPageRank` float unsigned NOT NULL,PRIMARY KEY  (`idPagina`)) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
+			String sentenceTableRanking = "CREATE TABLE `ranking` (`idPagina` int(11) unsigned NOT NULL,`Ind` float unsigned NOT NULL,`HyHostInd` float unsigned NOT NULL,`HyDomInd` float unsigned NOT NULL,`PageRank` float unsigned NOT NULL,`HyHostPageRank` float unsigned NOT NULL,`HyDomPageRank` float unsigned NOT NULL,PRIMARY KEY  (`idPagina`)) ENGINE=MyISAM DEFAULT CHARSET=latin1;";
 			st.executeUpdate(sentenceTableRanking);
 			
 			//LLenamos la tabla de paginas y ranking a la vez
@@ -67,40 +68,17 @@ public class DataBaseService {
 			for (int i = 0 ; i < arrayNamePages.length ; ++i)
 			{
 				namePage = (String)arrayNamePages[i];
-				sentence = "insert  into `paginas`(`idPagina`,`dominio`) values (" + (i+1) + ",'" + namePage + "');";
+				sentence = "insert  into `paginas`(`idPagina`,`dominio`) values (" + (i+1) + ",'" + Utlities.fixUrl(namePage) + "');";
 				st.executeUpdate(sentence);
 				
-				if (rankingInd.containsKey(namePage))
-					indValue = rankingInd.get(namePage).doubleValue();
-				else
-					indValue = 0;
+				indValue   	 = getRankingValueFor(rankingInd, namePage);
+				hostIndValue = getRankingValueFor(rankingHostInd, namePage);
+				domIndValue  = getRankingValueFor(rankingDomInd, namePage);
+				PRValue 	 = getRankingValueFor(rankingPR, namePage);
+				domPRValue 	 = getRankingValueFor(rankingHostPR, namePage);
+				hostPRValue  = getRankingValueFor(rankingDomPR, namePage);
 				
-				if (rankingHostInd.containsKey(namePage))
-					hostIndValue = rankingHostInd.get(namePage).doubleValue();
-				else
-					hostIndValue = 0;
-				
-				if (rankingDomInd.containsKey(namePage))
-					domIndValue = rankingDomInd.get(namePage).doubleValue();
-				else
-					domIndValue = 0;
-				
-				if (rankingPR.containsKey(namePage))
-					PRValue = rankingPR.get(namePage).doubleValue();
-				else
-					PRValue = 0;
-				
-				if (rankingHostPR.containsKey(namePage))
-					domPRValue = rankingHostPR.get(namePage).doubleValue();
-				else
-					domPRValue = 0;
-				
-				if (rankingDomPR.containsKey(namePage))
-					hostPRValue = rankingDomPR.get(namePage).doubleValue();
-				else
-					hostPRValue = 0;
-				
-				sentence = "insert  into `ranking`(`idPagina`,`Ind`,`HostInd`,`DomInd`,`PageRank`,`HostPageRank`,`DomPageRank`) values (" + (i+1) + "," + indValue + "," + hostIndValue + "," + domIndValue + "," + PRValue + "," + hostPRValue + "," + domPRValue +");" ;
+				sentence = "insert  into `ranking`(`idPagina`,`Ind`,`HyHostInd`,`HyDomInd`,`PageRank`,`HyHostPageRank`,`HyDomPageRank`) values (" + (i+1) + "," + indValue + "," + hostIndValue + "," + domIndValue + "," + PRValue + "," + hostPRValue + "," + domPRValue +");" ;
 				st.executeUpdate(sentence);
 				
 			}
@@ -114,9 +92,13 @@ public class DataBaseService {
 		{
 		   e.printStackTrace();
 		}
-		
-		 
-		
+	}
+
+	private double getRankingValueFor(HashMap<String, Double> ranking, String namePage) {
+		double value = 0;
+		if (ranking.containsKey(namePage))
+			value = ranking.get(namePage).doubleValue();
+		return value;
 	}
 	
 	public void writeToBD(String namePage,int idPage,ArrayList<String> arrayOfTerms)
@@ -124,19 +106,17 @@ public class DataBaseService {
 		//Primero ponemos los terminos del array en el string que se pondra en el campo de la BD
 		StringBuilder strings = new StringBuilder(); //Aca van los campos de texto que se graban en la BD
 		
-		int countMaxCharactersByText = 40100; //No puedo grabar mas que esta cantidad, en un campo de texto de la BD
 		String term;
 		
 		for (int i = 0 ; i < arrayOfTerms.size() ; ++i)
 		{
 			term = arrayOfTerms.get(i);
-			if ((strings.length() + term.length() ) < countMaxCharactersByText) 
+			if ((strings.length() + term.length()) < MaxCharacterReg) 
 				{
 					strings.append(term);
-					if ( (strings.length() + 1 ) < countMaxCharactersByText)
+					if ((strings.length() + 1 ) < MaxCharacterReg)
 						strings.append(" ");
 				}
-			
 		}
 		
 		//Grabamos en la BD
@@ -145,7 +125,7 @@ public class DataBaseService {
 		{
 			Statement st = conexion.createStatement();
 
-			sentence = "insert  into `articulos`(`idPagina`,`texto`) values (" + idPage+"," + "'" + strings.toString() + "');";
+			sentence = "insert  into `articulos`(`idPagina`,`texto`) values (" + idPage + "," + "'" + strings.toString() + "');";
 			st.executeUpdate(sentence);
 		}
 		catch (SQLException s)
