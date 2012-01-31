@@ -197,7 +197,7 @@ public class HostPageRank {
 		{
 			String namePage = (String) arrayNamesPages[i];
 			double PR = hashPR.get(namePage).doubleValue();
-			System.out.println(namePage + ":        " + PR);
+			System.out.println(Utlities.fixUrl(namePage) + "	" + PR);
 		}
 	}
 	

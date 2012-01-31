@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="latin1" collation="latin1_spanish_ci">proogle</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="articulos" view="standard">
+<left>414</left>
+<top>73</top>
+<width>214</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `articulos` (
+  `idArticulo` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idPagina` int(11) unsigned NOT NULL,
+  `texto` text NOT NULL,
+  PRIMARY KEY (`idArticulo`),
+  FULLTEXT KEY `texto` (`texto`),
+  FULLTEXT KEY `texto_2` (`texto`),
+  FULLTEXT KEY `texto_3` (`texto`)
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="paginas" view="standard">
+<left>131</left>
+<top>143</top>
+<width>209</width>
+<height>96</height>
+<sql_create_table>CREATE TABLE `paginas` (
+  `idPagina` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `dominio` text NOT NULL,
+  PRIMARY KEY (`idPagina`),
+  FULLTEXT KEY `NewIndex1` (`dominio`)
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="ranking" view="standard">
+<left>416</left>
+<top>236</top>
+<width>260</width>
+<height>176</height>
+<sql_create_table>CREATE TABLE `ranking` (
+  `idPagina` int(11) unsigned NOT NULL,
+  `Ind` float unsigned NOT NULL,
+  `HyHostInd` float unsigned NOT NULL,
+  `HyDomInd` float unsigned NOT NULL,
+  `PageRank` float unsigned NOT NULL,
+  `HyHostPageRank` float unsigned NOT NULL,
+  `HyDomPageRank` float unsigned NOT NULL,
+  PRIMARY KEY (`idPagina`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

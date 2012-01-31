@@ -19,6 +19,7 @@ public class DomService {
 		ArrayList<String> arrayServerCategory = new ArrayList<String>();
 		arrayServerCategory.add("com");
 		arrayServerCategory.add("org");
+		arrayServerCategory.add("net");
 		
 		return arrayServerCategory;
 	}

@@ -1,4 +1,5 @@
 
+import java.io.File;
 import java.util.ArrayList;
 public final class Indexator {
 
@@ -10,10 +11,10 @@ public final class Indexator {
 	private DirectoryReader dirReader;
 	private XMLParser xmlParser;
 	private String pathIndex;
-	private Indegre ind;
+	private SimpleIndegree ind;
 	private HostIndegre hostInd;
 	private DomIndegre domInd;
-	private PageRank pr;
+	private SimplePageRank pr;
 	private HostPageRank hostPR;
 	private DomPageRank domPR;
 	
@@ -24,12 +25,12 @@ public final class Indexator {
 		dirReader = new DirectoryReader(path);
 		xmlParser = new XMLParser();
 		pathIndex = path;
-		ind = new Indegre();
-		hostInd = new HostIndegre();
-		domInd = new DomIndegre();
-		pr = new PageRank();
-		hostPR = new HostPageRank();
-		domPR = new DomPageRank();
+		ind 	  = new SimpleIndegree();
+		hostInd   = new HostIndegre();
+		domInd    = new DomIndegre();
+		pr        = new SimplePageRank();
+		hostPR    = new HostPageRank();
+		domPR     = new DomPageRank();
 	}
 	
 	void startIndex()
@@ -42,15 +43,16 @@ public final class Indexator {
 		do
 		{
 			namePage = dirReader.getProxNameDoc();
-			absFilePath = pathIndex + "/" + namePage;
+			absFilePath = pathIndex + File.separator + namePage;
 			if (dirReader.readResult != TypeReadResult.END_OF_FILE)
 			{
 				arrayNamePages.add(namePage);
-				System.out.println("Parseando: " + absFilePath);
+				System.out.println("\nParseando: " + absFilePath);
 				xmlParser.parseHTML(absFilePath);
 				if (xmlParser.arrayOfOutLinks.size() > 0)
 				{
 					System.out.println("Links Encontrados: "+ xmlParser.arrayOfOutLinks.toString());
+					
 					ind.processInfoPage(xmlParser.arrayOfOutLinks.toArray());
 					hostInd.processInfoPage(namePage, xmlParser.arrayOfOutLinks.toArray());
 					domInd.processInfoPage(namePage, xmlParser.arrayOfOutLinks.toArray());
@@ -65,7 +67,7 @@ public final class Indexator {
 					domPR.processInfoPage(namePage, null);
 				}
 				
-				ArrayList<String> arrayTermsFinal = xmlParser.getTerms(); 
+				ArrayList<String> arrayTermsFinal = xmlParser.getTerms();
 				Utlities.removeStopWordsFrom(arrayTermsFinal);
 				DBServ.writeToBD(namePage,arrayNamePages.size(), arrayTermsFinal );
 			}
@@ -76,17 +78,17 @@ public final class Indexator {
 		hostPR.calculateHostPR();
 		domPR.calculateDomPR();
 		
-		System.out.println("Escribiendo a la BD de indegree");
+		System.out.println("\nEscribiendo a la BD de indegree");
 		ind.showRanking();
-		System.out.println("Escribiendo a la BD de HostIndegree");
+		System.out.println("\nEscribiendo a la BD de HostIndegree");
 		hostInd.showRanking();
-		System.out.println("Escribiendo a la BD de DomIndegree");
+		System.out.println("\nEscribiendo a la BD de DomIndegree");
 		domInd.showRanking();
-		System.out.println("Escribiendo a la BD de PR");
+		System.out.println("\nEscribiendo a la BD de PR");
 		pr.showRanking();
-		System.out.println("Escribiendo a la BD de HostPR");
+		System.out.println("\nEscribiendo a la BD de HostPR");
 		hostPR.showRanking();
-		System.out.println("Escribiendo a la BD de DomPR");
+		System.out.println("\nEscribiendo a la BD de DomPR");
 		domPR.showRanking();
 		
 		DBServ.writeToBD(arrayNamePages.toArray(), ind.getRanking(), hostInd.getRanking(), domInd.getRanking(), pr.getRanking(), hostPR.getRanking(), domPR.getRanking());
@@ -99,7 +101,7 @@ public final class Indexator {
 		System.out.println(args[0]);
 		Indexator myIndex = new Indexator(args[0]);
 		myIndex.startIndex();
-		
+
 	}
 
 }
